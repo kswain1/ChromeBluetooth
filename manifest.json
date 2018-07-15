@@ -1,0 +1,17 @@
+{
+  "name": "ChromeBluetooth",
+  "description": "Opening a bluetooth connection in chrome",
+  "version": "0.1",
+  "manifest_version": 2,
+  "app": {
+    "background": {
+      "scripts": ["background.js"]
+    }
+  },
+  "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'",
+  "icons": {},
+  "bluetooth": {
+      "uuids": [ "1105", "1106" ],
+      "socket": true
+  }
+}
