@@ -8,7 +8,6 @@
       "scripts": ["background.js"]
     }
   },
-  "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'",
   "icons": {},
   "bluetooth": {
       "uuids": [ "1105", "1106" ],

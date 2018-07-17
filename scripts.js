@@ -1,10 +1,12 @@
 function searchBluetoothDevices() {
     console.log('Requesting Bluetooth Device...');
     var options = {};
-    options.acceptAllDevices = true;
+    //options.acceptAllDevices = true;
+    options.filters = [{services: ['battery_service']}];
+
     navigator.bluetooth.requestDevice(options)
-    .then(function(device) {
-        
+    .then(device => {
+        console.log("Connecting to GATT server...");
         var $heading = $("<h1>Device found:</h1>");
 
         // get device info
@@ -17,11 +19,8 @@ function searchBluetoothDevices() {
         $newDiv.append($heading, $name, $id, $connected);
 
         $("#device-info").replaceWith($newDiv);
-
     })
-    .catch(function(error) {
-        console.log("Error: " + error);
-    });
+
 }
 
 // when the button is clicked, look for bluetooth devices
